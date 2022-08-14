@@ -1,7 +1,15 @@
 # personal credential and tokens
 
-/auth
+auth
 
 # virutal environment files
 
-/env
+env
+
+# vscode configuration
+
+.vscode
+
+# pytest cache
+
+__pycache__/
