@@ -1,5 +1,8 @@
 # import the required libraries
 # import the required libraries
+
+from bs4 import BeautifulSoup
+
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -7,7 +10,7 @@ import pickle
 import os.path
 import base64
 import email
-from bs4 import BeautifulSoup
+
   
 # Define the SCOPES. If modifying it, delete the token.pickle file.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -51,6 +54,7 @@ def getEmails():
   
     # iterate through all the messages
     for msg in messages:
+
         # Get the message from its id
         txt = service.users().messages().get(userId='me', id=msg['id']).execute()
   
@@ -74,18 +78,17 @@ def getEmails():
             data = data.replace("-","+").replace("_","/")
             decoded_data = base64.b64decode(data)
   
-            # Now, the data obtained is in lxml. So, we will parse 
-            # it with BeautifulSoup library
+            # Now, the data obtained is in lxml. So, we will parse it with BeautifulSoup library
             soup = BeautifulSoup(decoded_data , "lxml")
             body = soup.body()
   
-            # Printing the subject, sender's email and message
+            # # Printing the subject, sender's email and message
             print("Subject: ", subject)
             print("From: ", sender)
             print("Message: ", body)
             print('\n')
         except:
-            pass
+            print('not working')
   
-  
-getEmails()
+if __name__ == "__main__":
+    getEmails()

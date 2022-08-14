@@ -23,4 +23,29 @@ A precursor to using this code is the configuration of the Google Cloud console 
 
 #### **Storing Credentials**
 
-As part of step 5, the **OAuth 2.0 Client IDs** json file must be downloaded, renamed to *credentials.json* and saved in the root directory of this project.
+As part of step 5, the **OAuth 2.0 Client IDs** json file must be downloaded, renamed to *credentials.json* and saved in the auth directory for this project.
+
+<h2>Virtual Environment Configuration</h2>
+
+The module used to create and manage virtual environments is called venv. venv will usually install the most recent version of Python that you have available. If you have multiple versions of Python on your system, you can select a specific Python version by running python3 or whichever version you want.
+
+The following steps should be run in the terminal in Visual Studio Code with the project open.
+
+1. Install venv package:
+
+    ***pip install venv***
+
+2. Create a virtual environment:  
+
+    ***python3 -m venv env***
+
+    *NOTE: It is important to retain the venv name as env as this is aligned with the gitignore file.  Otherwise, the gitignore file will need to be updated to avoid committing the contents of virtual environment folder.*
+
+3. Activate the virtual enviroment:
+
+    ***source env/bin/activate***
+
+4. Install virtual environment dependencies:
+
+    ***python -m pip install -r docs/requirements.txt***
+
