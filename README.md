@@ -23,7 +23,7 @@ A precursor to using this code is the configuration of the Google Cloud console 
 
 #### **Storing Credentials**
 
-As part of step 5, the **OAuth 2.0 Client IDs** json file must be downloaded, renamed to *credentials.json* and saved in the auth directory for this project.
+As part of step 5, the **OAuth 2.0 Client IDs** json file must be downloaded, renamed to *credentials.json* and saved in a user created **auth** directory (root folder).
 
 <h2>Virtual Environment Configuration</h2>
 
