@@ -13,6 +13,8 @@ class GmailConfig:
 
     def __init__(self, token_path='auth/token.pickle', creds_path='auth/credentials.json'):
 
+        creds=None
+
         SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
         
         if os.path.exists(token_path):
